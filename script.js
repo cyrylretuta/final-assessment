@@ -1,5 +1,4 @@
-<script>
-        function toggleMode() {
+function toggleMode() {
             document.body.classList.toggle("light-mode");
         }
 
@@ -7,5 +6,3 @@
             event.preventDefault();
             alert("Message sent successfully!");
             this.reset();
-        });
- </script>
