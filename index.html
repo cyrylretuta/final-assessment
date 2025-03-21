@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            transition: 0.5s;
+        }
+
+        body.light-mode {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            color: black;
+        }
+
+	div {
+  	    text-align: justify;
+            text-justify: inter-word;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        body.light-mode header {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        body.light-mode nav ul li a {
+            color: black;
+        }
+
+        nav ul li a:hover {
+            color: #00c6ff;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: white;
+            color: black;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background: #00c6ff;
+            color: white;
+        }
+
+        section {
+            padding: 100px 10%;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        #home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://source.unsplash.com/1600x900/?technology,code') no-repeat center center/cover;
+            position: relative;
+        }
+
+        #home::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        body.light-mode #home::before {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        #home h1, #home p {
+            position: relative;
+            z-index: 1;
+        }
+
+        #home h1 {
+            font-size: 3rem;
+            animation: fadeIn 1.5s;
+        }
+
+        #home p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        body.light-mode .social-icons a {
+            color: black;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #00c6ff;
+        }
+
+        #about, #projects, #contact {
+            padding: 80px 10%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin: 20px;
+        }
+
+        body.light-mode #about,
+        body.light-mode #projects,
+        body.light-mode #contact {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .project-container {
+    	    display: flex;
+    	    flex-wrap: wrap;
+    	    justify-content: center;
+    	    gap: 20px;
+	}
+
+	.project-card {
+    	    background: rgba(255, 255, 255, 0.2);
+    	    padding: 20px;
+    	    border-radius: 10px;
+    	    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    	    width: 300px;
+    	    text-align: center;
+    	    transition: transform 0.3s, background 0.3s;
+	}
+
+	.project-card:hover {
+    	    transform: translateY(-5px);
+    	    background: rgba(255, 255, 255, 0.3);
+	}
+
+	.project-card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #00c6ff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: black;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: linear-gradient(to right, #0072ff, #00c6ff);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        body.light-mode footer {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 768px) {
+            #home h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="toggle-btn" onclick="toggleMode()">🌙</button>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to My Personal Portfolio</h1>
+        <p>Hi, I'm Cyryl Retuta, a Web Developer & Designer</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div>An aspiring IT student skilled in web development, software development, database management, and network configuration. Proficient in VB.NET, Java, and SQL, with experience using tools like Android Studio, SQL Server, and Cisco Packet Tracer. Developed projects such as StockEase: Inventory Management System and Android applications. Passionate about problem-solving and continuous learning in IT.</div>
+    </section>
+
+    <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-container">
+        <div class="project-card">
+            <h3>Laboratory 1: Simple WebPage</h3>
+            <p>A webpage that demonstrates the use of semantic HTML elements to create a well-structured and accessible webpage.</p>
+            <a href="https://github.com/cyrylretuta/laboratory-1.git" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+            <h3>Laboratory 2: Simple Portfolio Website</h3>
+            <p>A simple and responsive portfolio website built using HTML and CSS. The layout is designed using Flexbox and CSS Grid for a modern and structured appearance.</p>
+            <a href="https://github.com/cyrylretuta/laboratory-2.git" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+            <h3>Laboratory 3: To-Do List App</h3>
+            <p>A simple To-Do List App built with HTML, CSS, and JavaScript (ES6+). It allows users to add, edit, and delete tasks while storing them in localStorage so that tasks remain saved even after refreshing the page.</p>
+            <a href="https://github.com/cyrylretuta/laboratory-3.git" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+</section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form" id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle("light-mode");
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Message sent successfully!");
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
