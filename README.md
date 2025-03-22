@@ -21,4 +21,4 @@ This is my **Personal Portfolio Website**, showcasing my skills and projects. Th
 - **JavaScript (ES6+)** – Form validation, light/dark mode, and interactive elements.
 
 ## Live Demo
-The site is hosted at: [Live Demo](https://cyrylretuta.github.io/laboratory-2/)
+The site is hosted at: [Live Demo](https://cyrylretuta.github.io/final-assessment/)
