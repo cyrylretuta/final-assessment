@@ -22,19 +22,19 @@ This is my **Personal Portfolio Website**, showcasing my skills and projects. Th
 
 ## Screenshots
 
-Home:
+# Home:
 ![Screenshot](home.png)
 
 
-About:
+# About:
 ![Screenshot](about.png)
 
 
-Projects:
+# Projects:
 ![Screenshot](projects.png)
 
-Contact Form:
-![Screenshot](contactform.png)
+# Contact Form:
+![Screenshot](contact form.png)
 
 
 ## Live Demo
