@@ -20,5 +20,5 @@ This is my **Personal Portfolio Website**, showcasing my skills and projects. Th
 - **CSS3** – Flexbox, CSS Grid, and animations.
 - **JavaScript (ES6+)** – Form validation, light/dark mode, and interactive elements.
 
-## 📌 Live Demo
-[View Portfolio](#) _(https://cyrylretuta.github.io/final-assessment/)
+## Live Demo
+[View Portfolio](#)(https://cyrylretuta.github.io/final-assessment/)
