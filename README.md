@@ -15,10 +15,27 @@ This is my **Personal Portfolio Website**, showcasing my skills and projects. Th
 - **Projects** – GitHub repositories with descriptions and links.
 - **Contact Me** – Contact form with a working send button.
 
-## 🛠 Technologies Used
+## Technologies Used
 - **HTML5** – Semantic elements for structured content.
 - **CSS3** – Flexbox, CSS Grid, and animations.
 - **JavaScript (ES6+)** – Form validation, light/dark mode, and interactive elements.
+
+## Screenshots
+
+Home:
+![Screenshot](adding.png)
+
+
+About:
+![Screenshot](editing.png)
+
+
+Projects:
+![Screenshot](deleting.png)
+
+Contact Form:
+![Screenshot](deleted.png)
+
 
 ## Live Demo
 The site is hosted at: [Live Demo](https://cyrylretuta.github.io/final-assessment/)
